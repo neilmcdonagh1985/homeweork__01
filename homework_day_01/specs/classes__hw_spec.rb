@@ -2,7 +2,7 @@ require('minitest/autorun')
 require('minitest/rg')
 require_relative('../homework_classes')
 
-class TestStudent <MiniTest::Test
+class TestStudent < MiniTest::Test
 
   def test_student_name
     student = Student.new('Ross', 'E33')
@@ -18,6 +18,11 @@ class TestStudent <MiniTest::Test
     student = Student.new('Ross', 'E33')
     student.set_student_name('Ross McKay')
     assert_equal('Ross McKay', student.student_name())
+  end
+
+  def test_say_favourite_language
+    student = Student.new('Ross', 'E33')
+    assert_equal("I love Ruby", student.say_favourite_language("Ruby"))
   end
 
 end
